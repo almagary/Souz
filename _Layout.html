@@ -269,42 +269,45 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-md-3">
-                    <h4 class="title-footer-lft">ATENDIMENTO</h4>
-                    <div class="text-footer">
-                    	<a class="btn-whats-footer" href="" target="_blank"><i class="fa fa-whatsapp"></i> Chamar no WhatsApp</a>
-                    	<p><b>Whatsapp (43)99999-9999</b></p>
-                    	<p>Segunda a Quinta: das 08h às 17:50h<br>Sexta: das 08h às 17h</p>
-                    	<p><i class="fa fa-envelope-o"></i>&nbsp;&nbsp;<a ng-href="mailto:{{unit.contact_person}}" target="_top">{{unit.contact_person}}</a></p>
-                    	<p><b>{{unit.name}}</b><br>CNPJ: <br>Londrina - PR</p>
+                    <a href="/home" class="logo">
+                        <img class="img-responsive" title="{{unit.name}}" alt="{{unit.name}}" ng-src="@(HostName)files/{{unit.identifier}}/images/logo.png" />
+                    </a>
+                    <div class="text-footer">                    	
+                    	<p>Anywhere life take us</p>                    	
+                    	<p>E-mail:<a ng-href="mailto:adm.souzcompany@gmail.com" target="_top">adm.souzcompany@gmail.com</a></p>
+                    	<p>Whats: (43)99999-9999</p>
+                    </div>
+                </div>             
+                <div class="col-xs-12 col-md-2">
+                    <h4 class="title-footer-lft">LIFESTYLE</h4>
+                    <div class="text-link-footer" >
+                        <a class="link-footer" href="">JOURNAL</a>
+                        <a class="link-footer" href="">LOOKBOOK</a>
+                        <a class="link-footer" href="">COMMUNITY</a>
+                        <a class="link-footer" href="">EXPEDITIONS</a>
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-2">
-                    <h4 class="title-footer-lft">@Resources.Institutional</h4>
+                    <h4 class="title-footer-lft">PARA OS PERDIDOS</h4>
                     <div class="text-link-footer" ng-if="pages">
                         <a ng-repeat="page in pages | filter:{ type: 1 }" class="link-footer" href="{{page.url}}">{{page.name}}</a>
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-2">
-                    <h4 class="title-footer-lft">Ajuda</h4>
+                    <h4 class="title-footer-lft">FALA COM NOIS</h4>
                     <div class="text-link-footer" ng-if="pages">
                         <a ng-repeat="page in pages | filter:{ type: 2 }" class="link-footer" href="{{page.url}}">{{page.name}}</a>
                         <a class="link-footer" href="/contact">@Resources.ContactUs</a>
                     </div>
                 </div>
-                <div class="col-xs-12 col-md-2">
-                    <h4 class="title-footer-lft">REDES SOCIAIS</h4>
-                    <div class="social-icons">
-                    	<a class="button-social" href="" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                    	<a class="button-social" href="" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                    	<a class="button-social" href="" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
-            		</div>
-                </div>
                 <div class="col-xs-12 col-md-3">
-                    <h4 class="title-footer-lft">REDES SOCIAIS</h4>
-                    <div class="social-icons">
-                    	<a class="button-social" href="" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                    	<a class="button-social" href="" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                    	<a class="button-social" href="" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+                    <h4 class="title-footer-lft">NEWSLETTER</h4>
+                    <div class="text-link-foote">
+                        <p>Anywhere life take us</p>             
+                        <div class="col-xs-12">
+                            <input id="txt-newsletter-mail" ng-model="model_newsletter.email" ng-value="model_newsletter.email" type="email" placeholder="@Resources.Mail" class="form-control" />
+                            <button ng-click="saveNewsletter($event)" class="btn btn-newsinvite" data-loading-text="<i class='fa fa-spinner fa-spin'></i> @Resources.Loading"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                        </div>
             		</div>
                 </div>
             </div>
