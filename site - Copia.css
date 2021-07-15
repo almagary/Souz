@@ -152,9 +152,7 @@ a:hover {
 }
 
 .logo img {
-    margin-top: 31px;
-    margin-bottom: 3rem;
-    width: 12rem;
+    margin-top: 10px;
 }
 
 .header-content {
@@ -1242,18 +1240,7 @@ a:hover {
     padding-bottom: 15px;
     border-bottom: 1px solid #DDD;
     background-color: #1f1f1f;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
 }
-
-.bg-footer .logo img{
-    margin-top: 31px;
-    margin-bottom: 3rem;
-    width: 12rem;
-
-}
-
-
 
 .bg-footer-checkout {
     border-top: 4px solid #DDD;
@@ -1268,7 +1255,6 @@ a:hover {
     text-transform: uppercase;
     color: #ffffff;
     font-weight: bold;
-    margin-bottom: 3rem;
 }
 
 .title-footer-rgt {
@@ -1396,7 +1382,7 @@ a:hover {
 
 .signature {
     line-height: 90px;
-    color: #ddd;
+    color: #777;
     font-size: 13px;
     border-top: 1px solid #DDD;
     background-color: #1f1f1f;

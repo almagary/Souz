@@ -243,34 +243,13 @@
     <div class="body-content">
         @RenderBody()
     </div>
-    <!--Newsletter-->
-    <div class="bg-newsletter">
-        <div class="container">
-            <div class="content-newsletter row">
-                <div class="col-xs-12 col-md-5">
-                    <p>Receba Nossas Novidades!</p>
-                </div>
-                <div class="col-xs-12 col-md-7 news-form">
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <input id="txt-newsletter-name" ng-model="model_newsletter.name" ng-value="model_newsletter.name" type="text" placeholder="@Resources.Name" class="form-control" />
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <input id="txt-newsletter-mail" ng-model="model_newsletter.email" ng-value="model_newsletter.email" type="email" placeholder="@Resources.Mail" class="form-control" />
-                            <button ng-click="saveNewsletter($event)" class="btn btn-newsinvite" data-loading-text="<i class='fa fa-spinner fa-spin'></i> @Resources.Loading"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- Footer -->
     <footer class="bg-footer">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-md-3">
                     <a href="/home" class="logo">
-                        <img class="img-responsive" title="{{unit.name}}" alt="{{unit.name}}" ng-src="@(HostName)files/{{unit.identifier}}/images/logo.png" />
+                        <img class="img-responsive" title="{{unit.name}}" alt="{{unit.name}}" ng-src="@(HostName)files/{{unit.identifier}}/images/logo2.png" />
                     </a>
                     <div class="text-footer">                    	
                     	<p>Anywhere life take us</p>                    	
@@ -302,10 +281,10 @@
                 </div>
                 <div class="col-xs-12 col-md-3">
                     <h4 class="title-footer-lft">NEWSLETTER</h4>
-                    <div class="text-link-foote">
-                        <p>Anywhere life take us</p>             
+                    <div class="text-link-footer">
+                        <p>CADASTRE-SE E RECEBA PROMOÇÕES</p>             
                         <div class="col-xs-12">
-                            <input id="txt-newsletter-mail" ng-model="model_newsletter.email" ng-value="model_newsletter.email" type="email" placeholder="@Resources.Mail" class="form-control" />
+                            <input id="txt-newsletter-mail" ng-model="model_newsletter.email" ng-value="model_newsletter.email" type="email" placeholder="DIGITE SEU EMAIL AQUI" class="form-control" />
                             <button ng-click="saveNewsletter($event)" class="btn btn-newsinvite" data-loading-text="<i class='fa fa-spinner fa-spin'></i> @Resources.Loading"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
                         </div>
             		</div>
