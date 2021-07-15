@@ -152,9 +152,9 @@ a:hover {
 }
 
 .logo img {
-    margin-top: 22px;
-    margin-bottom: 0px;
-    width: 15rem;
+    margin-top: 31px;
+    margin-bottom: 3rem;
+    width: 12rem;
 }
 
 .header-content {
@@ -960,8 +960,8 @@ a:hover {
 
 #txt-newsletter-mail {
     border-radius: 0;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
     width: 88%;
     padding: 10px;
     line-height: 36px;
@@ -969,8 +969,6 @@ a:hover {
     border: 0;
     float: left;
     box-shadow: none;
-    background-color: #1f1f1f;
-    border-bottom: 1px solid #ffffff;
 }
 
 .mar-all-news {
@@ -1222,13 +1220,13 @@ a:hover {
     font-size: 18px;
     padding: 0;
     line-height: 34px;
-    background: #1f1f1f;
+    background: #FFF;
     border-radius: 0;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
     border-left: 0;
     text-align: center;
-    color: #ffffff !important;
+    color: #63534e !important;
     margin: 0px;
     width: 12%;
     float: left;
@@ -1453,20 +1451,20 @@ a:hover {
 
 /**MENU**/
 .bg-menu {
-    background: #ffffff;
+    background: #63534e;
 }
 
 #navMenu {
     margin-bottom: 0;
     min-height: 0px;
     display: table;
-    /* width: 100%; */
+    width: 100%;
     border: 0;
     z-index: 1040;
 }
 
 #navMenu .navbar-nav {
-    /* width: 100%; */
+    width: 100%;
 }
 
 #navMenu .navbar-nav>li {
@@ -1556,17 +1554,16 @@ a:hover {
 }
 
 #menu-top .navbar-nav>li>a {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     line-height: 30px;
-    color: #1f1f1f;
+    color: #FFF;
     font-weight: bold;
     font-size: 14px;
 }
 
 #menu-top .nav>li:hover>a {
-    background: #ffffff;
-    text-decoration:underline;
+    background: #544844;
 }
 
 #menu-top .nav>li>a::selection {
