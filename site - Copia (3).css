@@ -1459,13 +1459,10 @@ a:hover {
 #navMenu {
     margin-bottom: 0;
     min-height: 0px;
-    display: flex;
+    display: table;
     /* width: 100%; */
     border: 0;
     z-index: 1040;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
 }
 
 #navMenu .navbar-nav {
@@ -2406,8 +2403,7 @@ a:hover {
 /** ACC MENU **/
 .acc-menu {
     margin-bottom: 0;
-    margin-right: 12px;
-    padding-left: 6px;
+    margin-right: 10px;
 }
 
 .acc-menu>li {
@@ -2415,10 +2411,10 @@ a:hover {
 }
 
 .acc-menu>li>a {
-    padding-bottom: 13px;
+    padding-bottom: 18px;
     line-height: 40px;
-    color: #030303;
-    font-size: 18px;
+    color: #999;
+    font-size: 13px;
     font-weight: bold;
     letter-spacing: 0.5px;
     text-transform: uppercase;

@@ -1,0 +1,134 @@
+<tamppa:config:_Checkout />
+
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="_CheckoutController" ng-cloak>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @RenderSection("MetaTagTitle", false)
+    <link rel="shortcut icon" type="image/x-icon" href="@(HostName)files/@CurrentUnit.identifier/images/favicon.png" />
+    <tamppa:css:_Checkout />
+    <!--Unit Data CSS-->
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300&subset=latin-ext" rel="stylesheet" />
+  	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+    <link href="@(HostName)files/@CurrentUnit.identifier/css/site.css" rel="stylesheet" />
+    <tamppa:content:PageSize />
+    <tamppa:content:GoogleTagManager />
+    <!--Render Section-->
+    @RenderSection("StyleSheets", false)
+</head>
+<body>
+    <tamppa:script:GoogleTagManager />
+    <header>
+        <div class="top-bar-checkout">
+        </div>
+        <div class="header-content-checkout">
+            <div class="container">
+                <div class="row">
+                    <!--Logo-->
+                    <div class="col-xs-4 col-md-3">
+                        <a href="/home">
+                            <img style="width: 120px; margin-top: 3rem;" class="img-responsive" title="{{unit.name}}" alt="{{unit.name}}" ng-src="@(HostName)files/{{unit.identifier}}/images/logo.png" />
+                        </a>
+                    </div>
+                    <div class="col-xs-8 col-md-7 text-right pull-right security-info">
+                        <p class="hidden-xs">Você está em um ambiente 100% seguro.</p>
+                        <a target="_blank" href="https://www.ssllabs.com/ssltest/analyze.html?d={{config.in_production && unit.domain || unit.homolog}}"><img class="ssl-seal" alt="@CurrentUnit.name" src="~/content/assets/img/bandeiras/let-s-encrypt-gray.png" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--Body-->
+    <div class="body-content">
+        <!-- Content Body -->
+        @RenderBody()
+    </div>
+   <!-- Footer -->
+    <footer class="bg-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-3">
+                    <a href="/home" class="logo">
+                        <img class="img-responsive" title="{{unit.name}}" alt="{{unit.name}}" ng-src="@(HostName)files/{{unit.identifier}}/images/logo2.png" />
+                    </a>
+                    <div class="text-footer">                    	
+                    	<p>Anywhere life take us</p>                    	
+                    	<p>E-mail:<a ng-href="mailto:adm.souzcompany@gmail.com" target="_top">adm.souzcompany@gmail.com</a></p>
+                    	<p>Whats: (43)99999-9999</p>
+                    </div>
+                </div>             
+                <div class="col-xs-12 col-md-2">
+                    <h4 class="title-footer-lft">LIFESTYLE</h4>
+                    <div class="text-link-footer" >
+                        <a class="link-footer" href="">JOURNAL</a>
+                        <a class="link-footer" href="">LOOKBOOK</a>
+                        <a class="link-footer" href="">COMMUNITY</a>
+                        <a class="link-footer" href="">EXPEDITIONS</a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-2">
+                    <h4 class="title-footer-lft">PARA OS PERDIDOS</h4>
+                    <div class="text-link-footer" ng-if="pages">
+                        <a ng-repeat="page in pages | filter:{ type: 1 }" class="link-footer" href="{{page.url}}">{{page.name}}</a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-2">
+                    <h4 class="title-footer-lft">FALA COM NOIS</h4>
+                    <div class="text-link-footer" ng-if="pages">
+                        <a ng-repeat="page in pages | filter:{ type: 2 }" class="link-footer" href="{{page.url}}">{{page.name}}</a>
+                        <a class="link-footer" href="/contact">@Resources.ContactUs</a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-3">
+                    <h4 class="title-footer-lft">NEWSLETTER</h4>
+                    <div class="text-link-footer">
+                        <p>CADASTRE-SE E RECEBA PROMOÇÕES</p>             
+                        <div class="col-xs-12">
+                            <input id="txt-newsletter-mail" ng-model="model_newsletter.email" ng-value="model_newsletter.email" type="email" placeholder="DIGITE SEU EMAIL AQUI" class="form-control" />
+                            <button ng-click="saveNewsletter($event)" class="btn btn-newsinvite" data-loading-text="<i class='fa fa-spinner fa-spin'></i> @Resources.Loading"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                        </div>
+            		</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+  
+	<div class="payment-footer">
+        <div class="container">
+            <h4>PAGAMENTO</h4>
+            <div class="pmt-flags">
+                <img title="Metodos de pagamento" alt="Metodos de pagamento" ng-src="@(HostName)files/{{unit.identifier}}/images/payment.png" />
+            </div>
+            <h4>SEGURANÇA</h4>
+            <div class="selos-seguranca">
+              <a target="_blank" href=""><img title="Let's Encrypt" alt="Let's Encrypt" ng-src="@(HostName)files/{{unit.identifier}}/images/lets-encrypt.png" /></a>
+              <a target="_blank" href=""><img style="width: 110px; margin-left: 15px;" title="Google Safe Browsing" alt="Google Safe Browsing" ng-src="@(HostName)files/{{unit.identifier}}/images/google-safe-browsing.png" /></a>
+            </div>
+        </div>
+	</div>
+    <div class="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8">
+                    {{unit.name}} Store © @DateTime.Now.Year Todos os direitos reservados.
+                </div>
+                <div class="hidden-xs col-sm-4 text-right">
+                    <a href="http://www.tamppa.com" target="_blank"><img title="Tamppa E-commerce Intelligence" alt="Tamppa E-commerce Intelligence" src="~/content/assets/img/tamppa.png" width="120" /></a>
+                </div>
+                <div class="visible-xs text-center">
+                    <a href="http://www.tamppa.com" target="_blank"><img title="Tamppa E-commerce Intelligence" alt="Tamppa E-commerce Intelligence" src="~/content/assets/img/tamppa.png" width="120" /></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button id="scroll-top" class="btn">
+        <i class="fa fa-chevron-up"></i>
+    </button>
+    <!-- Loading -->
+    <div class="loading" style="display:none">@Resources.Loading &#8230;</div>
+    <!-- Script -->
+    <tamppa:script:_Checkout />
+    @RenderSection("Scripts", false)
+</body>
+</html>

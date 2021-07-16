@@ -137,7 +137,7 @@
                     <!--Bg Menu-->
                     <div class="col-xs-12 col-md-6">
                         <div class="bg-menu hidden-xs">
-                            <div class="container">
+                            <div class="">
                                 <nav id="navMenu" class="navbar">
                                     <div class="navbar-header">
                                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-top" aria-expanded="false">
@@ -171,29 +171,18 @@
                     </div>
                     <!--Account-->
                     <div class="col-xs-12 col-md-3 text-right account-box myaccount-cart-content hidden-xs">
-                        <ul class="list-inline acc-menu">
-                            <li ng-if="user" class="visitor">
-                            	<a href="/customer/space">{{getfirstname(user.name)}} <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
-                            	<ul class="acc-dropdown">
-                            		<li><a href="/customer/space">Minha conta</a></li>
-                            		<li><a href="/customer/orders">Meus pedidos</a></li>
-                            		<li><a href="/customer/addresses">Meus endereços</a></li>
-                            		<li><a href="/customer/logout">@Resources.Exit</a></li>
-                            	</ul>
-                        	</li>
-                            <li ng-if="!user">
-                            	<a id="btn-login-principal" data-target="#modal-login-default" data-toggle="modal" href="#">Minha conta <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
-                            	<ul class="acc-dropdown">
-                            		<li><a href="/customer/orders">Meus pedidos</a></li>
-                            		<li><a href="/customer/addresses">Meus endereços</a></li>
-                            	</ul>
-                        	</li>
-                        </ul>
+                        <div class="content-cart-header">
+                               <!--Button Cart-->
+                            <a class="shopping-cart-button" href="/cart">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </a>
+
+                        </div>
                         <div class="content-cart-header">
                             <!--Button Cart-->
                             <a class="shopping-cart-button" href="/cart">
                               	<span id="txt-count-products" class="pull-right badge badge-danger">{{cart._products.length}}</span>
-                            	<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                  <i class="fa fa-shopping-bag" aria-hidden="true"></i>
                             </a>
                             <!--Shopping Cart Float-->
                             <div class="shopping-cart">
@@ -233,6 +222,25 @@
                                 <a ng-if="cart._products.length > 0" href="/checkout" class="button">@Resources.Checkout</a>
                             </div>
                         </div>
+                        <ul class="list-inline acc-menu">
+                            <li ng-if="user" class="visitor">
+                            	<a href="/customer/space">{{getfirstname(user.name)}} <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                            	<ul class="acc-dropdown">
+                            		<li><a href="/customer/space">Minha conta</a></li>
+                            		<li><a href="/customer/orders">Meus pedidos</a></li>
+                            		<li><a href="/customer/addresses">Meus endereços</a></li>
+                            		<li><a href="/customer/logout">@Resources.Exit</a></li>
+                            	</ul>
+                        	</li>
+                            <li ng-if="!user">
+                            	<a id="btn-login-principal" data-target="#modal-login-default" data-toggle="modal" href="#">LOGIN</a>
+                            	<ul class="acc-dropdown">
+                            		<li><a href="/customer/orders">Meus pedidos</a></li>
+                            		<li><a href="/customer/addresses">Meus endereços</a></li>
+                            	</ul>
+                        	</li>
+                        </ul>
+                      
                     </div>
                 </div>
             </div>
