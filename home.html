@@ -1,0 +1,130 @@
+<tamppa:config:Home />
+
+@section Scripts{
+    <tamppa:script:Home />
+	<script type="text/javascript" src="@(HostName)files/@CurrentUnit.identifier/js/instafeed.min.js"></script>    
+    <script type="text/javascript" src="@(HostName)files/@CurrentUnit.identifier/js/owl.carousel.min.js"></script>	
+	<script type="text/javascript">        
+            // Owl carousel
+            $('.owl-carousel').owlCarousel({
+            	loop: true,
+                margin: 10,
+                nav: true,
+                dots: false,
+                navText: ['<i class="fa fa-chevron-circle-left"></i>', '<i class="fa fa-chevron-circle-right"></i>'],
+                animateIn: 'fadeIn',
+                animateOut: 'fadeOut',
+                responsive: {
+                	0: { items: 2 },
+                    600: { items: 5 },
+                    1000: { items: 6 }
+                }
+    </script>	
+}
+
+@section StyleSheets{
+	<link href="@(HostName)files/@CurrentUnit.identifier/css/owl.carousel.min.css" rel="stylesheet" />
+	<link href="@(HostName)files/@CurrentUnit.identifier/css/owl.theme.default.min.css" rel="stylesheet" />
+}
+
+@section MetaTagTitle{
+    <title>@Html.Raw(CurrentConfig != null && !String.IsNullOrEmpty(CurrentConfig.seo_tag_title) ? CurrentConfig.seo_tag_title : ViewBag.Title)</title>
+}
+
+@section MetaKeywords{
+    <meta name="keywords" content="@Html.Raw(CurrentConfig != null && !String.IsNullOrEmpty(CurrentConfig.seo_meta_keywords) ? CurrentConfig.seo_meta_keywords : "")" />
+}
+
+@section MetaDescription{
+    <meta name="description" content="@Html.Raw(CurrentConfig != null && !String.IsNullOrEmpty(CurrentConfig.seo_meta_description) ? CurrentConfig.seo_meta_description : "")" />    
+}
+
+<!-- Banners -->
+<!--<tamppa:images id="homeslider" class="homeslider hidden-xs"></tamppa:images>-->
+<tamppa:images id="homeslider" class="homeslider"></tamppa:images>
+
+<!--<tamppa:images class="mobile-slider visible-xs"></tamppa:images>-->
+<div class="container">
+    <!--Condicoes comerciais-->
+    <div class="row promocoes-home hidden-xs">
+      <div class="col-xs-12 col-sm-3 col-md-3 text-center"> <span><strong>FRETE GRÁTIS</strong>COMPRAS DE R$300 +</span></div> 
+      <div class="col-xs-12 col-sm-3 col-md-3 text-center"> <span><strong>6X NO CARTÃO</strong> COMPRA DE R$ 300 +</span></div>
+      <div class="col-xs-12 col-sm-3 col-md-3 text-center"> <span><strong>7% OFF</strong>PAGAMENTO A VISTA OU PIX</span></div>
+      <div class="col-xs-12 col-sm-3 col-md-3 text-center"> <span><strong>ENTREGA EXPRESSA</strong>EM LONDRINA-PR</span></div>
+    </div>        
+     	<!--Brands-->
+    <div ng-if="brands" class="row home-marcas">
+    	<!-- section-title -->
+        <div class="bg-title">
+        	<hr />
+            <span>caroulsel</span>
+        </div>
+        <div class="col-xs-12">
+        	<div class="owl-carousel owl-theme">
+            	<div ng-repeat="brand in brands | orderBy: random()" class="item">
+                	<a title="{{brand.name}}" href="/brand/{{brand.page}}">
+                    	<img alt="{{brand.name}}" ng-src="{{brand.url}}" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>  
+    <!-- Mini banners -->
+    <div class="row mini-banners">
+    	<div class="col-md-4">
+        	<tamppa:images class="mini-tipo-1"></tamppa:images>
+    	</div>
+    	<div class="col-md-4">
+        	<tamppa:images class="mini-tipo-2"></tamppa:images>
+    	</div>
+    	<div class="col-md-4">
+        	<tamppa:images class="mini-tipo-3"></tamppa:images>
+    	</div>
+	</div>
+	<div class="row mini-banners2">
+    	<div class="col-md-4">
+        	<tamppa:images class="mini-tipo-4"></tamppa:images>
+    	</div>
+    	<div class="col-md-4">
+        	<tamppa:images class="mini-tipo-5"></tamppa:images>
+    	</div>
+    	<div class="col-md-4">
+        	<tamppa:images class="mini-tipo-6"></tamppa:images>
+    	</div>
+	</div>   
+  	<!-- Mini banners -->
+    <div class="row mini-banners">
+    	<div class="col-md-6">
+        	<tamppa:images class="mini-home-1"></tamppa:images>
+    	</div>
+    	<div class="col-md-6">
+        	<tamppa:images class="mini-home-2"></tamppa:images>
+    	</div>
+	</div>  
+    <!--Produtos lancamentos-->
+    <div class="row home-lancamentos">
+        <div class="bg-title">
+        	<hr />
+            <span>Mais Vendidos</span>
+        </div>          
+        <div ng-if="visiteds" class="col-xs-12">
+        	<div ng-repeat="pro in visiteds | orderBy: random() | limitTo:8" class="item-prod col-xs-12 col-md-3">
+            	@Html.Partial("_ProductBox")
+            </div>                
+        </div>	
+    </div>  
+
+    <!--Produtos lancamentos-->
+    <div class="row home-lancamentos">
+        <div class="bg-title">
+        	<hr />
+            <span>Novidades</span>
+        </div>
+        <div ng-if="news" class="col-xs-12">
+        	<div ng-repeat="pro in news | orderBy: random() | limitTo:8" class="item-prod col-xs-12 col-md-3">
+            	@Html.Partial("_ProductBox")
+            </div>                
+        </div>	
+    </div>
+
+</div>

@@ -1,0 +1,67 @@
+<tamppa:config:ProductBox />
+
+<div class="prod-img">
+    <a class="caption-link center-block" ng-href="{{pro.url}}">
+        <img width="100%" alt="{{pro.name}}" class="img-responsive center-block" ng-src="{{pro.main && pro.main.url_mini || pro.image}}" />
+    	<img width="100%" alt="{{pro.name}}" class="img-responsive center-block img-hover hidden-xs" ng-src="{{pro.cover && pro.cover.url_mini || pro.main.url_mini}}" />
+    </a>
+    <div ng-if="pro.variations" class="caption-area-variation">
+        <input type="hidden" name="attribute" ng-value="pro.attribute" />
+        <input type="hidden" name="sku" ng-value="pro.sku" />
+        <input type="hidden" name="has_stock" ng-value="pro.has_stock" />
+        <input type="hidden" name="stock" ng-value="pro.stock" />
+        <input type="hidden" name="amount" ng-value="pro.amount" />
+        <input type="hidden" name="price_on_request" ng-value="pro.price_on_request" />
+        <input type="hidden" name="price" ng-value="pro.price" />
+        <input type="hidden" name="discount" ng-value="pro.discount" />
+        <input type="hidden" name="date_initial" ng-value="pro.date_initial" />
+        <input type="hidden" name="date_final" ng-value="pro.date_final" />
+        <ul class="caption-variations" data-past="false" ng-repeat="type in gettypeattrs(pro.variations)">
+            <li class="caption-title">{{type.name}}</li>
+            <li ng-repeat="attr in getattrs(type.id, pro) | orderBy: 'position'">
+                <label ng-click="selectattr(pro, $event)" data-id="{{attr.id}}" data-type="{{type.id}}" style="{{attrbackground(attr.color)}}" class="attribute-button">{{type.has_color && ' ' || attr.name}}</label>
+            </li>
+        </ul>
+    </div>
+</div>
+<span class="prod-new" ng-if="pro.is_new">@Resources.New</span>
+<a class="prod-seller" ng-if="pro.brand" target="_blank" href="/brand/{{pro.brand.page}}">
+    <img width="48" alt="{{pro.brand.name}}" ng-src="{{pro.brand.url}}" />
+</a>
+<div class="prod-name">
+    <a class="caption-link center-block" ng-href="{{pro.url}}">
+        <h2>{{pro.name}}</h2>
+    </a>
+</div>
+<section ng-if="pro.sku" class="prod-price-section">
+    <span ng-if="pro.discount > 0" class="prod-price-old">De: {{pro.price | currency:"R$ "}}</span>
+    <span ng-if="pro.discount > 0" class="prod-price">Por: {{pro.discount | currency:"R$ "}}</span>
+    <span ng-if="pro.discount == 0" class="prod-price">{{pro.price | currency:"R$ "}}</span>
+  	<!-- Installment -->
+  	<div class="installment">
+      	<!-- Leve mais pague menos -->
+        <p ng-show="messageInstallmentCervejaria(pro) && pro.installment.plots > 1">
+            {{pro.installment.message}} <b>{{pro.installment.value | currency:'@Resources.Currency '}}</b>
+        </p>
+      	<!-- Outros -->
+        <p ng-show="!messageInstallmentCervejaria(pro) && pro.installment.plots > 1">
+            Ou {{pro.installment.plots}}x de {{pro.installment.value | currency:'@Resources.Currency '}} <!--{{pro.installment.message}}-->
+        </p>
+    </div>
+</section>
+<!--Quantity-->
+<section ng-hide="verifyproduct_warnme(pro)" class="prod-quantity">
+	<span class="btn btn-sm btn-default btn-minus" ng-click="productbox_minusamount(pro)">
+    	<i class="fa fa-minus"></i>
+    </span>
+    <input type="text" step="1" ng-model="pro.quantity" class="text-center txt-quantity" ng-value="pro.quantity" ng-readonly="true" />
+    <span class="btn btn-sm btn-default btn-plus" ng-click="productbox_plusamount(pro)">
+    	<i class="fa fa-plus"></i>
+    </span>
+</section>
+<button type="button" ng-hide="!verifyproduct_buy(pro)" class="add-to-cart" ng-click="buy(pro, $event)">
+    COMPRAR
+</button>
+<button ng-hide="!verifyproduct_warnme(pro)" type="button" class="add-to-cart btn-warnme" ng-click="setWarnMe(pro,$event)" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">
+    @Resources.WarnMe
+</button>

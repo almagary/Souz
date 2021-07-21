@@ -295,14 +295,8 @@ a:hover {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.row.mini-banners .bg-title span {
-    font-size: 23px;
-    margin: 21px 1px;
-    font-weight: 500;
-}
-
 .mini-banners {
-    padding-bottom: 50px;
+    padding-bottom: 20px;
 }
 
 .mini-banners2 {
@@ -430,20 +424,10 @@ a:hover {
 
 
 /**MEIO PROMOCOES**/
-.row.promocoes-home b, strong {
-    margin-right: 12px;
-    font-size: 16px;
-    font-weight: 500;
-    color: #1f1f1f;
-}
-
-.row.promocoes-home span:not(strong){font-size: 12px;color: #999;}
-
 .promocoes-home {
-    color: #1f1f1f;
+    color: #555555;
     font-size: 12px;
     padding: 15px 0;
-    margin-top: 3rem;
 }
 
 /**FIM MEIO PROMOCOES**/
@@ -454,10 +438,6 @@ a:hover {
 }
 
 /**FIM MOSAICO**/
-
-
-
-
 
 
 /**PRODUCT STYLE**/
@@ -582,7 +562,6 @@ a:hover {
     right: 5%;
     width: 60%;
     padding: 6px;
-    /* top: 46rem; */
     bottom: 15px;
     text-decoration: none;
 }
@@ -789,7 +768,6 @@ a:hover {
 
 .prod-img img {
     width: 262px;
-    z-index: 1001;
 }
 
 .prod-name a:hover {
@@ -797,15 +775,14 @@ a:hover {
 }
 
 .prod-name h2 {
-    color: #999;
-    font-size: 14px;
+    color: #777;
+    font-size: 13px;
     font-weight: normal;
     padding: 0 15px;
     max-height: 42px;
     margin-top: 5px;
     margin-bottom: 5px;
     overflow: hidden;
-    text-transform: uppercase;
 }
 
 .prod-description {
@@ -858,7 +835,7 @@ a:hover {
 }
 
 .prod-price {
-    color: #333;
+    color: #14b323;
     font-size: 23px;
     font-weight: bold;
 }
@@ -1318,11 +1295,8 @@ a:hover {
     width: 100%;
     padding-bottom: 10px;
 }
-.text-link-footer>p {
-    color: #ccc;
-}
 
-.text-footer p{
+.text-footer p {
     float: left;
     width: 100%;
     color: #ddd;
@@ -1504,17 +1478,12 @@ a:hover {
 
 #navMenu .dropdown-menu {
     border: 0;
-    /* width: 100%; */
-    left: 66px;
-    border: none;
-    border-left: 2px solid #000;
-    top: 52px;
-    margin-top: 22px;
+    width: 100%;
 }
 
 #navMenu .dropdown-menu>li {
-    /* float: left; */
-    /* width: 16.6%; */
+    float: left;
+    width: 16.6%;
 }
 
 #menu-item-6,
@@ -1596,7 +1565,6 @@ a:hover {
     color: #1f1f1f;
     font-weight: bold;
     font-size: 14px;
-    margin-bottom: 15px;
 }
 
 #menu-top .nav>li:hover>a {
@@ -2034,224 +2002,6 @@ a:hover {
 
 /**FIM PRODUCT VIEW**/
 
-/**PRODUCT STYLE**/
-.home-lancamentos {
-  margin-top: 20px;
-}
-
-.home-instagram {
-  margin-top: 32px;
-}
-
-.thumbnail {
-  border: 0px !important;
-  background-color: transparent !important;
-}
-
-.item-prod .prod-img {
-  position: relative;
-}
-
-.item-prod .img-hover {
-  position: absolute;
-  top: 0;
-  opacity: 0;
-}
-
-.item-prod:hover .img-hover {
-  opacity: 1;
-}
-
-.item-prod .prod-img .caption-area-variation {
-  position: absolute;
-  bottom: 0;
-  padding: 3px 0;
-  width: 100%;
-  display: none;
-  background: rgba(255, 255, 255, 0.7);
-}
-
-.item-prod:hover .prod-img .caption-area-variation {
-  display: block;
-}
-
-.item-prod .caption-variations {
-  list-style: none;
-  padding: 0 15px;
-  margin-bottom: 0;
-  font-size: 12px;
-  color: #777;
-}
-
-.item-prod .caption-variations li.ng-scope {
-  display: inline-block;
-  margin-right: 5px;
-}
-
-.add-to-cart {
-  bottom: 135px;
-  color: #fff;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  height: auto;
-  border-radius: 25px;
-  background-color: transparent;
-  border: 2px solid #f8f8f8;
-  position: absolute;
-  width: 75%;
-  font-family: "Open Sans", "Roboto", sans-serif;
-  font-size: 16px;
-  text-decoration: none;
-  padding: 3px 6px 3px 6px;
-  /* display: none; */
-  right: 13%;
-  z-index: 1003;
-}
-
-.item-prod:hover .add-to-cart {
-  display: block;
-}
-
-.add-to-cart i {
-  float: left;
-  text-align: center;
-  width: 100%;
-  margin-top: 2px;
-}
-
-.add-to-cart:hover {
-  background-color: #ffffff;
-  color: #000000;
-  cursor: pointer;
-  border-color: #000000;
-}
-
-.add-to-cart.btn-warnme {
-  background-color: #777 !important;
-}
-
-.caption-half-up,
-.caption-up {
-  margin-left: 0px !important;
-}
-
-.thumbnail .caption {
-  padding: 0px;
-  height: 100%;
-  text-align: center;
-  margin: 0px;
-  background-color: rgba(223, 223, 223, 0.37);
-}
-
-.thumbnail .caption .caption-area-variation {
-  height: 100%;
-  background-color: #fff;
-}
-
-.thumbnail .caption .variation-price {
-  font-size: 22px;
-  position: absolute;
-  top: 74%;
-  left: 4%;
-  color: #828282 !important;
-}
-
-.thumbnail .caption .variation-price .prod-price {
-  margin: 0;
-}
-
-.thumbnail .caption .variation-price .discount-selected {
-  float: left;
-}
-
-.thumbnail .caption .variation-price .currency-price {
-  float: left !important;
-  width: auto !important;
-  font-size: 18px !important;
-  font-weight: bold !important;
-  margin-top: 0px !important;
-  margin-left: 5px !important;
-  color: #828282 !important;
-}
-
-.thumbnail .caption .variation-price .first-price {
-  float: left !important;
-  width: auto !important;
-  margin-left: 5px !important;
-  font-size: 35px !important;
-  font-weight: bold !important;
-  color: #828282 !important;
-}
-
-.thumbnail .caption .variation-price .second-price {
-  float: left !important;
-  font-size: 15px !important;
-  width: auto !important;
-  color: #828282 !important;
-}
-
-.thumbnail .caption .caption-link {
-  padding-top: 45%;
-  padding-bottom: 20%;
-  text-decoration: none;
-}
-
-.thumbnail .caption .caption-link span {
-  padding: 10px 25px;
-  text-align: center;
-  background-color: rgba(59, 204, 87, 0.79);
-  font-size: 16px;
-  color: #fff;
-}
-
-.thumbnail .caption .caption-link span:hover {
-  background-color: #37ce63;
-  color: #fff;
-}
-
-.thumbnail .caption .caption-variations {
-  float: left;
-  width: 100%;
-  background-color: #fff;
-  list-style: none;
-  padding: 10px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  margin: 0px;
-}
-
-.thumbnail .caption .caption-variations .caption-title {
-  float: left;
-  width: 100%;
-  margin-top: 10px;
-}
-
-.thumbnail .caption .caption-variations li {
-  float: left;
-  font-size: 14px;
-  text-align: left;
-}
-
-.thumbnail .caption .caption-variations li label {
-  font-size: 14px;
-  margin: 2px;
-}
-
-.thumbnail .caption .caption-variations li label:hover {
-  cursor: pointer;
-}
-
-.thumbnail-product-img {
-  float: left;
-}
-
-.badge-has-color {
-  width: 20px;
-  height: 20px;
-}
-
-/**FIM PRODUCT STYLE**/
-
 /**RADIO & CHECKBOX**/
 
 
@@ -2521,7 +2271,6 @@ a:hover {
 
 .footer-cart {
     margin-bottom: 20px;
-    border: 2px solid #333;
 }
 
 .footer-cart .caption-freight {
@@ -2993,10 +2742,10 @@ a:hover {
     }
 
     .add-to-cart {
-        /* position: relative; */
-        right: 18%;
-        width: 65%;
-        /* float: revert; */
+        position: relative;
+        right: 0;
+        width: 70%;
+        float: right;
     }
 
     .add-to-cart.btn-warnme {
@@ -3096,33 +2845,3 @@ a:hover {
 .pl-md-zero {
     padding-left: 0;
 }
-
-/* MODAL CADASTRO */
-
-div#modal-content-login {
-    border: 1px solid #ddd;
-    height: 401px;
-    width: 501px;
-    background-color: #ffffff;
-}
-
-h4.new-modal-title {
-    color: #030303;
-    text-transform: uppercase;
-    font-weight: 500;
-    padding-top: 6px;
-}
-
-a.btn.btn-primary.btn-rounded.text-2x.new-modal-areabutton-in-form-divide.forgot-password {
-    background-color: white;
-    color: black;
-    text-decoration: underline;
-    border: none;
-    display: block;
-}
-
-button.btn.btn-success.btn-rounded.text-2x.new-modal-areabutton-in-form-divide {
-    width: 100%;
-}
-
-/******************/

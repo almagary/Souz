@@ -797,15 +797,14 @@ a:hover {
 }
 
 .prod-name h2 {
-    color: #999;
-    font-size: 14px;
+    color: #777;
+    font-size: 13px;
     font-weight: normal;
     padding: 0 15px;
     max-height: 42px;
     margin-top: 5px;
     margin-bottom: 5px;
     overflow: hidden;
-    text-transform: uppercase;
 }
 
 .prod-description {
@@ -858,7 +857,7 @@ a:hover {
 }
 
 .prod-price {
-    color: #333;
+    color: #14b323;
     font-size: 23px;
     font-weight: bold;
 }
@@ -1318,11 +1317,8 @@ a:hover {
     width: 100%;
     padding-bottom: 10px;
 }
-.text-link-footer>p {
-    color: #ccc;
-}
 
-.text-footer p{
+.text-footer p {
     float: left;
     width: 100%;
     color: #ddd;
@@ -1504,17 +1500,12 @@ a:hover {
 
 #navMenu .dropdown-menu {
     border: 0;
-    /* width: 100%; */
-    left: 66px;
-    border: none;
-    border-left: 2px solid #000;
-    top: 52px;
-    margin-top: 22px;
+    width: 100%;
 }
 
 #navMenu .dropdown-menu>li {
-    /* float: left; */
-    /* width: 16.6%; */
+    float: left;
+    width: 16.6%;
 }
 
 #menu-item-6,
@@ -1596,7 +1587,6 @@ a:hover {
     color: #1f1f1f;
     font-weight: bold;
     font-size: 14px;
-    margin-bottom: 15px;
 }
 
 #menu-top .nav>li:hover>a {
@@ -2521,7 +2511,6 @@ a:hover {
 
 .footer-cart {
     margin-bottom: 20px;
-    border: 2px solid #333;
 }
 
 .footer-cart .caption-freight {
